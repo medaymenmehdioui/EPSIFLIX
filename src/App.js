@@ -8,8 +8,6 @@ import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import './styles/App.css';
 
-
-
 function App() {
     return (
         <Router>
