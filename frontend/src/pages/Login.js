@@ -1,13 +1,36 @@
 import React, { useState } from 'react';
 import '../styles/App.css';
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Logique de connexion ici
+
+        const response = await fetch("http://localhost:7000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: email.toLowerCase(), password }),
+          })
+          switch (response.status) {
+            case 200:
+              const {name} = await response.json()  
+              localStorage.setItem("user",name)
+              navigate("/")
+              break
+            case 409:
+              alert("Erreur authentification")
+              break
+              case 500:
+                alert("Erreur serveur")
+                break
+
+          }
     };
 
     return (
@@ -35,7 +58,7 @@ const Login = () => {
                     />
                     <button type="submit">Connexion</button>
                 </form>
-                <p>Pas encore de compte ? <a href="/signup">Inscrivez-vous</a></p>
+                <p>Pas encore de compte ? <a href="/signup" style={{color: '#6a5acd'}}>Inscrivez-vous</a></p>
             </section>
         </main>
     );

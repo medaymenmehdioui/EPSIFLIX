@@ -1,0 +1,218 @@
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1f1f1f; /* Noir profond */
+  margin: 0;
+  padding: 0;
+  color: #ccc; /* Texte clair */
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none; /* Optional, to indicate it is clickable */
+ 
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: #ff7f00; /* Couleur au survol */
+}
+
+/* Home */
+.banner {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.categories {
+  padding: 20px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-item {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Form Container */
+h2 {
+  margin-bottom: 20px;
+  color: #ff6347; /* Orange rougeâtre */
+ 
+}
+
+.form-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px 50px 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.form-container button:hover {
+  background-color: #555;
+}
+
+.form-container p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.form-container p a {
+  color: #333;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6347; /* Orange rougeâtre */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+p {
+  margin-top: 15px;
+  color: #6a5acd; /* Bleu violet */
+}
+
+p a {
+  color: #6a5acd;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #6a5acd;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #6a5acd; /* Bleu violet */
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+main {
+  padding: 20px;
+}
+
+.banner {
+  background-color: #333; /* Gris foncé */
+  color: #ff6347; /* Orange rougeâtre */
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.video-grid {
+  padding: 20px;
+  
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Quatre colonnes fixes */
+  gap: 20px;
+ 
+}
+.grid-item {
+  background-color: #333; /* Gris foncé */
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 10%;
+  
+}
+
+
+
+.grid-item video {
+  width: 100%;
+  border-radius: 10px;
+ 
+}
+
+.grid-item p {
+  margin-top: 10px;
+  color: #ff6347; /* Orange rougeâtre */
+}

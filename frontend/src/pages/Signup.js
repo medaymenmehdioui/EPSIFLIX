@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import '../styles/App.css';
+import { useNavigate } from "react-router-dom";
+
 
 const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Logique d'inscription ici
+           
+        const response = await fetch("http://localhost:7000/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email: email.toLowerCase(), password }),
+          })
+          switch (response.status) {
+            case 200:
+              navigate("/login")
+              break
+            case 500:
+              alert("Erreur serveur")
+              break
+
+          }
+      
     };
 
     return (
@@ -45,7 +63,8 @@ const Signup = () => {
                     />
                     <button type="submit">Inscription</button>
                 </form>
-                <p>Déjà un compte ? <a href="/login">Connectez-vous</a></p>
+                
+                <p>Déjà un compte ? <a href="/login"style={{color: '#6a5acd'}}>Connectez-vous</a></p>
             </section>
         </main>
     );
